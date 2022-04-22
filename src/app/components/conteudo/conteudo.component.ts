@@ -7,7 +7,7 @@ import { Component} from '@angular/core';
 })
 
 export class ConteudoComponent {
-  constructor() { }
+  constructor() {  }
 
   arrItem = [
     {
@@ -20,4 +20,7 @@ export class ConteudoComponent {
     }
   ]
 
+  mostraAlert(titulo: string) {
+    alert(titulo);
+  }
 }

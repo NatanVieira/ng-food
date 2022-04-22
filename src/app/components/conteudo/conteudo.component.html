@@ -6,6 +6,9 @@
                 <img src={{arrItem[0].pathImg}} alt="comida" width="100%" height="225" id="img1">
                 <div class="card-body">
                     <p class="card-text" id="texto1">{{arrItem[0].titulo}}</p>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="btn1" (click)="mostraAlert(arrItem[0].titulo)">{{arrItem[0].titulo}}</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -15,6 +18,9 @@
                 <img src={{arrItem[1].pathImg}} alt="bebida" width="100%" height="225" id="img2">
                 <div class="card-body">
                     <p class="card-text" id="texto2">{{arrItem[1].titulo}}</p>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="btn2" (click)="mostraAlert(arrItem[1].titulo)">{{arrItem[1].titulo}}</button>
+                    </div>
                 </div>
             </div>
         </div>
