@@ -23,4 +23,5 @@ export class ConteudoComponent {
   mostraAlert(titulo: string) {
     alert(titulo);
   }
+
 }
