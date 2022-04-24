@@ -11,6 +11,7 @@ import { ComidaComponent } from './pages/comida/comida.component';
 import { Route, RouterModule} from '@angular/router';
 import { BebidaListaComponent } from './components/bebida-lista/bebida-lista.component';
 import { BebidaComponent } from './pages/bebida/bebida.component';
+import { HttpClientModule} from '@angular/common/http'
 
 const ROUTES: Route[] = [
   {
@@ -41,6 +42,7 @@ const ROUTES: Route[] = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],

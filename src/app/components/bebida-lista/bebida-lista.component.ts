@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { bebidas } from 'src/app/listas/bebidas';
-
+import { Component, OnInit} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Cardapio } from 'src/app/models/cardapio.model';
 @Component({
   selector: 'ngf-bebida-lista',
   templateUrl: './bebida-lista.component.html',
@@ -8,7 +8,14 @@ import { bebidas } from 'src/app/listas/bebidas';
 })
 
 export class BebidaListaComponent {
-  listaBebida = bebidas;
-  constructor() { }
-
+  // listaBebida = bebidas;
+  listaBebida: Cardapio[] = [];
+  constructor(private http: HttpClient) {}
+  ngOnInit(): void {
+    this.http
+    .get<Cardapio[]>('http://localhost:3000/bebidas')
+    .subscribe((resultado) => {
+      this.listaBebida = resultado;
+    })
+  }
 }
