@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { Cardapio } from 'src/app/models/cardapio.model';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'ngf-item-cardapio',

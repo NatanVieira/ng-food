@@ -6,6 +6,10 @@ import { Component} from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-
+  QtdPedido: number = 0;
   constructor() { }
+
+  adicionaItemAoPedido(){
+    this.QtdPedido++;
+  }
 }
