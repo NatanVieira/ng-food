@@ -13,8 +13,9 @@ export class PedidoService {
     return this.listaItensPedido.length;
   }
 
-  adicionaItemPedido(item:IComida | IBebida){
-    this.listaItensPedido.push(item);
+  adicionaItemPedido(item:IComida | IBebida, quantidade: number){
+    const itens = Array(quantidade).fill(item);
+    this.listaItensPedido.push(...itens);
   }
 
   limpaLista(){

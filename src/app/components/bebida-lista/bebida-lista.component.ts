@@ -20,7 +20,7 @@ export class BebidaListaComponent {
     .subscribe((resultado: IBebida[]) => {this.listaBebida = resultado;})
   }
 
-  adicionarBebida(bebida: IBebida){
-    this.pedidoService.adicionaItemPedido(bebida);
+  adicionarBebida(bebida: any){
+    this.pedidoService.adicionaItemPedido(bebida.item, bebida.quantidade);
   }
 }

@@ -20,8 +20,8 @@ export class ComidaListaComponent {
     this.comidaService.devolverComidas().subscribe((resultado:IComida[]) => {this.listaComida = resultado});
   }
 
-  adicionarComida(comida: IComida){
-    this.pedidoService.adicionaItemPedido(comida);
+  adicionarComida(comida: any){
+    this.pedidoService.adicionaItemPedido(comida.item, comida.quantidade);
   }
 
 }
