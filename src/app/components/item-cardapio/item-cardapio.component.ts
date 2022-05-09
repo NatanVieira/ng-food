@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IBebida } from 'src/app/models/bebida.model';
 import { IComida } from 'src/app/models/comida.model';
 
@@ -8,33 +7,15 @@ import { IComida } from 'src/app/models/comida.model';
   templateUrl: './item-cardapio.component.html',
   styleUrls: ['./item-cardapio.component.scss']
 })
-export class ItemCardapioComponent implements OnInit {
+export class ItemCardapioComponent {
 
-  lista: IComida[] | IBebida[] = [];
-  modelo: string = '';
-  constructor(private http: HttpClient) { }
-;
-  @Input() 
-  set tipoCardapio (valor: string){
-    this.tipoCardapio = valor;
+  @Input() item?: IComida | IBebida;
+
+  @Output() adicionaAoPedido = new EventEmitter<IComida | IBebida>();
+  
+  constructor() { }
+
+  adicionarAoPedido() {
+    this.adicionaAoPedido.emit(this.item);
   }
-
-  ngOnInit(): void {
-
-    if(this.tipoCardapio == 'comidas'){
-      this.http
-      .get<IComida[]>('http://localhost:3000/comidas')
-      .subscribe((resultado) => {
-        this.lista = resultado;
-      })
-    }
-    else {
-        this.http
-        .get<IBebida[]>('http://localhost:3000/bebidas')
-        .subscribe((resultado) => {
-          this.lista = resultado;
-        })
-    }
-  }
-
 }

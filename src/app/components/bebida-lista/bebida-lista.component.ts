@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IBebida } from 'src/app/models/bebida.model';
+import { BebidaService } from 'src/app/services/bebida.service';
+import { PedidoService } from 'src/app/services/pedido.service';
 @Component({
   selector: 'ngf-bebida-lista',
   templateUrl: './bebida-lista.component.html',
@@ -10,12 +12,15 @@ import { IBebida } from 'src/app/models/bebida.model';
 export class BebidaListaComponent {
   // listaBebida = bebidas;
   listaBebida: IBebida[] = [];
-  constructor(private http: HttpClient) {}
+  constructor(private bebidaService: BebidaService,
+              private pedidoService: PedidoService) {}
   ngOnInit(): void {
-    this.http
-    .get<IBebida[]>('http://localhost:3000/bebidas')
-    .subscribe((resultado) => {
-      this.listaBebida = resultado;
-    })
+    this.bebidaService
+    .devolverBebidas()
+    .subscribe((resultado: IBebida[]) => {this.listaBebida = resultado;})
+  }
+
+  adicionarBebida(bebida: IBebida){
+    this.pedidoService.adicionaItemPedido(bebida);
   }
 }

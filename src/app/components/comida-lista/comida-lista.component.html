@@ -1,1 +1,6 @@
-<ngf-item-cardapio itemCardapio="comidas"></ngf-item-cardapio>
+<ngf-item-cardapio 
+class="col-6"
+*ngFor="let comida of listaComida"
+[item]="comida"
+(adicionaAoPedido)="adicionarComida($event)"
+></ngf-item-cardapio>
