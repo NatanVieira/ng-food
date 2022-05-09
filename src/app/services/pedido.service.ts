@@ -21,8 +21,12 @@ export class PedidoService {
     this.listaItensPedido = [];
   }
 
-  removeItemLista(item:IComida | IBebida){
-    const indice = this.listaItensPedido.findIndex((x) => x.id === item.id);
-    this.listaItensPedido.splice(indice,1);
+  buscarItensPedido(): IComida[] | IBebida[] {
+    return this.listaItensPedido;
+  }
+
+  removerItemPedido(id: number) {
+    const itemIndex = this.listaItensPedido.findIndex((item) => item.id === id)
+    this.listaItensPedido.splice(itemIndex, 1);
   }
 }

@@ -12,7 +12,8 @@ import { Route, RouterModule} from '@angular/router';
 import { BebidaListaComponent } from './components/bebida-lista/bebida-lista.component';
 import { BebidaComponent } from './pages/bebida/bebida.component';
 import { HttpClientModule} from '@angular/common/http';
-import { ItemCardapioComponent } from './components/item-cardapio/item-cardapio.component'
+import { ItemCardapioComponent } from './components/item-cardapio/item-cardapio.component';
+import { PedidoListaComponent } from './pages/pedido-lista/pedido-lista.component'
 
 const ROUTES: Route[] = [
   {
@@ -26,6 +27,10 @@ const ROUTES: Route[] = [
   {
     path: 'bebida',
     component: BebidaComponent
+  },
+  {
+    path: 'pedido',
+    component: PedidoListaComponent
   }
 ]
 
@@ -41,6 +46,7 @@ const ROUTES: Route[] = [
     BebidaListaComponent,
     BebidaComponent,
     ItemCardapioComponent,
+    PedidoListaComponent,
   ],
   imports: [
     BrowserModule,
