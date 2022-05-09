@@ -3,4 +3,5 @@ class="col-6"
 *ngFor="let bebida of listaBebida"
 [item]="bebida"
 (adicionaAoPedido)="adicionarBebida($event)"
+[mostra]="true"
 ></ngf-item-cardapio>
