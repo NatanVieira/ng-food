@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
-import { Cardapio } from 'src/app/models/cardapio.model';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { IBebida } from 'src/app/models/bebida.model';
+import { IComida } from 'src/app/models/comida.model';
 
 @Component({
   selector: 'ngf-item-cardapio',
@@ -10,7 +10,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 export class ItemCardapioComponent implements OnInit {
 
-  lista: Cardapio[] = [];
+  lista: IComida[] | IBebida[] = [];
   modelo: string = '';
   constructor(private http: HttpClient) { }
 ;
@@ -23,14 +23,14 @@ export class ItemCardapioComponent implements OnInit {
 
     if(this.tipoCardapio == 'comidas'){
       this.http
-      .get<Cardapio[]>('http://localhost:3000/comidas')
+      .get<IComida[]>('http://localhost:3000/comidas')
       .subscribe((resultado) => {
         this.lista = resultado;
       })
     }
     else {
         this.http
-        .get<Cardapio[]>('http://localhost:3000/bebidas')
+        .get<IBebida[]>('http://localhost:3000/bebidas')
         .subscribe((resultado) => {
           this.lista = resultado;
         })

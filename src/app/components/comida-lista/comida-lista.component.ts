@@ -1,7 +1,7 @@
 // import {comidas} from '../../listas/comidas';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cardapio } from 'src/app/models/cardapio.model';
+import { IComida } from 'src/app/models/comida.model';
 
 @Component({
   selector: 'ngf-comida-lista',
@@ -10,12 +10,12 @@ import { Cardapio } from 'src/app/models/cardapio.model';
 })
 export class ComidaListaComponent {
   // listaComida = comidas;
-  listaComida: Cardapio[] = [];
+  listaComida: IComida[] = [];
   constructor(private http: HttpClient) { }
   
   ngOnInit(): void {
     this.http
-    .get<Cardapio[]>('http://localhost:3000/comidas')
+    .get<IComida[]>('http://localhost:3000/comidas')
     .subscribe((resultado) => {
       this.listaComida = resultado;
     })

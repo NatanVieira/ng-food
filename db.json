@@ -1,24 +1,28 @@
 {
     "comidas" : [
         {
+            "id": 1,
             "titulo": "Pizza",
             "enderecoImagem": "../../assets/img/comida/pizza.png",
             "descricao": "Pizza de peperonni",
             "valor": 50.00
         },
         {
+            "id":2,
             "titulo": "Feijoada",
             "enderecoImagem": "../../assets/img/comida/pizza.png",
             "descricao": "Feijoada com torresmo",
             "valor": 45.00
         },
         {
+            "id": 3,
             "titulo": "Macarronada",
             "enderecoImagem": "../../assets/img/comida/pizza.png",
             "descricao": "Macorronada a bolonhesa",
             "valor": 30.00
         },
         {
+            "id": 4,
             "titulo": "Sorvete",
             "enderecoImagem": "../../assets/img/comida/pizza.png",
             "descricao": "Sorvete de chocolate",
@@ -27,18 +31,21 @@
     ],
     "bebidas" : [
         {
+            "id":1,
             "titulo": "Coca-Cola",
             "enderecoImagem": "../../assets/img/bebida/bebida.jpg",
             "descricao": "Coca-Cola 2L",
             "valor": 8.00
         },
         {
+            "id": 2,
             "titulo": "Guaraná Antarctica",
             "enderecoImagem": "../../assets/img/bebida/bebida.jpg",
             "descricao": "Guaraná Antarctica 2L",
             "valor": 6.50
         },
         {
+            "id": 3,
             "titulo": "Cerveja Brahma",
             "enderecoImagem": "../../assets/img/bebida/bebida.jpg",
             "descricao": "Cerveja Brahma Lata",
