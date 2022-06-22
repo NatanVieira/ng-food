@@ -1,3 +1,10 @@
+# M1S10
+# Módulo 1 - Semana 10 - NG-FOOD
+
+Lista de exercícios da semana 10 do módulo 1 do curso DevInHouse - NDD Tech.
+# Angular, TypeScript
+
+
 # NgFood
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
